@@ -1,6 +1,6 @@
 import React from 'react'
-
-const page = () => {
+./components/FooterBanner
+const page = () => {./components/HeroBanner
   return (
     <div>
       {/* <HeroBanner heroBanner={bannerData.length && bannerData[0]}  /> */}
