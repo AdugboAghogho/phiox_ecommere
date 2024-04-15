@@ -1,13 +1,13 @@
-export const schemaTypes = []
+import { createSchema } from "sanity"
+import banner from "./banner"
+import product from "./product"
 
-import createSchema from 'part:@sanity/base/schema-creator';
-import schemaTypes from 'all:part:@sanity/base/schema-type';
+export const schemaTypes = [
+    product,
+    banner,
+]
 
-import product from './product';
-import banner from './banner';
-
-export default createSchema({
-  name: 'default',
-  types: schemaTypes.concat([ product, banner ]),
-})
-  
+// export default createSchema({
+//     name: 'default',
+//     types: schemaTypes.concat([ product, banner ]),
+//   })
