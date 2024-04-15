@@ -1,21 +1,36 @@
-import React from 'react'
-./components/FooterBanner
-const page = () => {./components/HeroBanner
-  return (
-    <div>
-      {/* <HeroBanner heroBanner={bannerData.length && bannerData[0]}  /> */}
-      <div className="products-heading">
-        <h2>Best Seller Products</h2>
-        <p>speaker There are many variations passages</p>
-      </div>
+import React from 'react';
 
-      {/* <div className="products-container">
-        {products?.map((product) => <Product key={product._id} product={product} />)}
-      </div> */}
+// import { client } from '../lib/client';
+import { Product, FooterBanner,  HeroBanner } from '../../src/components';
 
-      {/* <FooterBanner footerBanner={bannerData && bannerData[0]} /> */}
+const Home = ({ products, bannerData }) => (
+  <div>
+    <HeroBanner   />
+    {/* <HeroBanner heroBanner={bannerData.length && bannerData[0]}  /> */}
+    <div className="products-heading">
+      <h2>Best Seller Products</h2>
+      <p>speaker There are many variations passages</p>
     </div>
-  )
-}
 
-export default page
+    {/* <div className="products-container">
+      {products?.map((product) => <Product key={product._id} product={product} />)}
+    </div> */}
+
+    <FooterBanner  />
+    {/* <FooterBanner footerBanner={bannerData && bannerData[0]} /> */}
+  </div>
+);
+
+// export const getServerSideProps = async () => {
+//   const query = '*[_type == "product"]';
+//   const products = await client.fetch(query);
+
+//   const bannerQuery = '*[_type == "banner"]';
+//   const bannerData = await client.fetch(bannerQuery);
+
+//   return {
+//     props: { products, bannerData }
+//   }
+// }
+
+export default Home;
