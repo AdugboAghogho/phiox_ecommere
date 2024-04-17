@@ -27,6 +27,8 @@ const Home = ({ products, bannerData }) => {
 
 
 
+// src/pages/products.js (Create a new page component)
+
 export async function getServerSideProps() {
   const client = /* Your Sanity client setup here */; // Assuming you have it defined elsewhere
 
@@ -41,6 +43,15 @@ export async function getServerSideProps() {
   };
 }
 
+export default function ProductsPage({ products, bannerData }) {
+  return (
+    <ul>
+      {products.map((product) => (
+        <li key={product._id}>{product.name}</li> // Assuming `_id` is your product identifier
+      ))}
+    </ul>
+  );
+}
 
 
 
