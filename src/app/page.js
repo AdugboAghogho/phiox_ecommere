@@ -23,16 +23,15 @@ const Home = ({ products, bannerData }) => {
     </div>
   );
 }
-export const getServerSideProps = async () => {
+export async function getServerSideProps() {
   const query = '*[_type == "product"]';
   const products = await client.fetch(query);
-
   const bannerQuery = '*[_type == "banner"]';
   const bannerData = await client.fetch(bannerQuery);
 
   return {
-    props: { products, bannerData }
-  }
+    props: { products, bannerData },
+  };
 }
 
 export default Home
