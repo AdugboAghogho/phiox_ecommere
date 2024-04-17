@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import { Product, FooterBanner, HeroBanner } from '../components';
+import { Product, FooterBanner, HeroBanner } from '../../components';
 
 export default function Home() {
   return (
