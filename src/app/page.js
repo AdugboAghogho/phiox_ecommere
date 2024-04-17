@@ -23,9 +23,15 @@ const Home = ({ products, bannerData }) => {
     </div>
   );
 }
+
+
+// src/pages/products.js
+
 export async function getServerSideProps() {
-  const query = '*[_type == "product"]';
-  const products = await client.fetch(query);
+  const client = /* Your Sanity client setup here */; // Assuming you have it defined elsewhere
+  const productQuery = '*[_type == "product"]';
+  const products = await client.fetch(productQuery);
+
   const bannerQuery = '*[_type == "banner"]';
   const bannerData = await client.fetch(bannerQuery);
 
@@ -33,5 +39,7 @@ export async function getServerSideProps() {
     props: { products, bannerData },
   };
 }
+
+
 
 export default Home
