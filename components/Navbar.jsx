@@ -11,7 +11,7 @@ const Navbar = () => {
 
   return (
     <div className="navbar-container">
-      <Link href="">
+      <Link href="/">
         <Image 
           src={logo} 
           alt="logo" 
